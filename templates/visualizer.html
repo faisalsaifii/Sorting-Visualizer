@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block body %}
+<h1>Sorting Algorithm: {{ sorting_algorithm.name }}</h1>
+<h2>Sorted Numbers:</h2>
+<ul>
+	{% for number in numbers %}
+	<li>{{ number }}</li>
+	{% endfor %}
+</ul>
+<p>Original Unsorted Numbers: {{ sorting_algorithm.numbers }}</p>
+{% endblock body %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sorting Visualizer</title>
+	</head>
+	<body>
+		<form method="POST" action="{% url 'visualize_sorting' %}">
+			{% csrf_token %}
+			<label for="algorithm_name">Sorting Algorithm:</label>
+			<select name="algorithm_name" id="algorithm_name">
+				<option value="bubble_sort">Bubble Sort</option>
+				<option value="selection_sort">Selection Sort</option>
+				<option value="insertion_sort">Insertion Sort</option>
+				<!-- Add more sorting algorithm options -->
+			</select>
+			<br />
+			<label for="numbers">Numbers:</label>
+			<input type="text" name="numbers" id="numbers" />
+			<br />
+			<button type="submit">Visualize Sorting</button>
+		</form>
+		{% block body %}{% endblock body %}
+	</body>
+</html>
